@@ -7,7 +7,7 @@ import streamlit as st
 st.cache(persist=True)
 
 def load_data_covid() -> pd.DataFrame:
-    response = requests.get("http://localhost:8000/get_data_covid")
+    response = requests.get("http://127.0.0.1:8000/get_data_covid")
 
     if response.status_code == 200:
         try:
