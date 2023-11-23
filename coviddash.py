@@ -3,16 +3,9 @@ import pandas as pd
 import requests
 import streamlit as st
 
-##############################################
+
 st.cache(persist=True)
 
-
-# def load_data():
-#     covid=pd.read_csv("data.csv")
-#     covid["Date"]=pd.to_datetime(covid["Date"],format="%d-%m-%Y")
-#     latest=covid[covid["Date"] == "2020-11-30"][["Country","Confirmed","Recovered","Deaths","Active"]]
-#     return covid,latest
-# covid,latest= load_data()
 def load_data_covid() -> pd.DataFrame:
     response = requests.get("http://localhost:8000/get_data_covid")
 
